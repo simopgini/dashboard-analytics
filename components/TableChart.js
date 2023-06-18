@@ -77,28 +77,28 @@ const TableChart = () => (
           </TableHeaderCell>
         </TableRow>
       </TableHead>
+
+
       <TableBody>
         {data.map((item) => (
           <TableRow key={item.name} className="">
             <TableCell>
               <Flex className="justify-start items-center">
-                <div className="w-5 h-5 mr-3">
                   <Image
-                    className="rounded-full"
+                    className="rounded-full mr-3"
                     src="https://rickandmortyapi.com/api/character/avatar/4.jpeg"
                     alt="img"
-                    width={50}
-                    height={50}
+                    width={20}
+                    height={20}
                   />
-                </div>
-                <span>{item.name}</span>
+                <Text>{item.name}</Text>
               </Flex>
             </TableCell>
             <TableCell>
               <Text>{item.Role}</Text>
             </TableCell>
             <TableCell>
-            <Badge color="stone"><Text color="neutral">{item.departement}</Text></Badge>
+            <Badge color="stone">{item.departement}</Badge>
             </TableCell>
             <TableCell></TableCell>
           </TableRow>

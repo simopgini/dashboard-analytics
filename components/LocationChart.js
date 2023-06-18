@@ -43,7 +43,7 @@ const dataFormatter = (number) => {
 
 const LocationChart = () => {
   return (
-    <Card className="rounded-xl bg-[#32363E] ring-transparent text-white">
+    <Card className=" text-white">
       <Title className="text-white">Location Overview</Title>
       <BarChart
         className="mt-6"
@@ -59,3 +59,4 @@ const LocationChart = () => {
 };
 
 export default LocationChart;
+// rounded-xl bg-[#32363E] ring-transparent

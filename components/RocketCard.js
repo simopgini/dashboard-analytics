@@ -20,6 +20,7 @@ const RocketCard = () => {
         alt="rocket"
         width={150}
         height={50}
+        priority={true}
       />
     </Card>
   );

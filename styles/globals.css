@@ -8,16 +8,9 @@
   background-color: #535a67 !important;
 }
 
-.loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 .spinner {
   border: 4px solid rgba(0, 0, 0, 0.1);
-  border-left-color: rgb(239, 5, 5);
+  border-left-color: rgb(255, 255, 255);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -64,7 +57,6 @@
 } */
 /* 
 /* .immagine {
-  background-image: url('https://spoonacular.com/recipeImages/716429-556x370.jpg');
   background-size:contain;
 } */
 

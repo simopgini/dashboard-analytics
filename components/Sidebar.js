@@ -1,12 +1,10 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { IoStatsChartSharp } from "react-icons/io5";
 import { RiMore2Fill, RiCloseFill } from "react-icons/ri";
 
-const Sidebar = () => {
+function Sidebar() {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
@@ -30,8 +28,9 @@ const Sidebar = () => {
         </Link>
         <div className="flex justify-center mb-2">
           <Image
-            className="rounded-full ring-2 ring-[#e6e5e8]"
+            className="rounded-full ring-2 ring-[#e6e5e8] mb-2"
             src="/avatar.png"
+            priority={true}
             alt="img"
             width={60}
             height={60}
@@ -62,8 +61,18 @@ const Sidebar = () => {
       >
         {showMenu ? <RiCloseFill /> : <RiMore2Fill />}
       </button>
+
+      {/* <button
+        onClick={(e) => {
+          e.preventDefault();
+          return setShowMenu(!showMenu);
+        }}
+        className="bg-cyan-500 md:hidden fixed right-4 bottom-4 text-2xl bg-primary-900 p-2.5 rounded-full text-white z-50"
+      >
+        {showMenu ? <RiCloseFill /> : <RiMore2Fill />}
+      </button> */}
     </>
   );
-};
+}
 
 export default Sidebar;

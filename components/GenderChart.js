@@ -18,7 +18,7 @@ const characters = [
 const valueFormatter = (number) => `${number.toString()}`;
 
 const GenderChart = () => (
-  <Card className="bg-[#32363E] ring-transparent text-white h-full">
+  <Card className="text-white h-full">
     <Title>Gender</Title>
       <Legend
         className="mt-3"
@@ -37,3 +37,5 @@ const GenderChart = () => (
 );
 
 export default GenderChart;
+
+{/* <Card className="bg-[#32363E] ring-transparent text-white h-full"> */}
