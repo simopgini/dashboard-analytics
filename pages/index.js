@@ -1,12 +1,20 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import RocketCard from '@component/components/RocketCard'
-import { Card, Flex, Metric, Title } from '@tremor/react'
-import { HiUser } from 'react-icons/hi2'
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import RocketCard from "@component/components/RocketCard";
+import { Card, Flex, Metric, Title } from "@tremor/react";
+import { HiUser } from "react-icons/hi2";
+import Head from "next/head";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  <Head>
+    <title>Dashboard analytics</title>
+    <meta name="description" content="Use this dashboard and increase your sales" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" />
+  </Head>;
+
   return (
     <div>
       <div className="p-4 bg-[#20232a] h-screen text-white lg:w-5/6 xl:w-2/3 2xl:w-2/3">
@@ -22,5 +30,5 @@ export default function Home() {
         </Card>
       </div>
     </div>
-  )
+  );
 }
