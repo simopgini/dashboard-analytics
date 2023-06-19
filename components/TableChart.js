@@ -1,5 +1,3 @@
-// "use client";
-
 import {
   Card,
   Table,
@@ -15,54 +13,9 @@ import {
 } from "@tremor/react";
 import Image from "next/image";
 
-const data = [
-  {
-    name: "Viola Amherd",
-    Role: "Federal Councillor",
-    departement: "Male",
-    status: "active",
-  },
-  {
-    name: "Simonetta Sommaruga",
-    Role: "Federal Councillor",
-    departement: "Female",
-    status: "active",
-  },
-  {
-    name: "Alain Berset",
-    Role: "Federal Councillor",
-    departement: "Male",
-    status: "active",
-  },
-  {
-    name: "Ignazio Cassis",
-    Role: "Federal Councillor",
-    departement: "Female",
-    status: "active",
-  },
-  {
-    name: "Ueli Maurer",
-    Role: "Federal Councillor",
-    departement: "Unknown",
-    status: "active",
-  },
-  {
-    name: "Guy Parmelin",
-    Role: "Federal Councillor",
-    departement: "Unknown",
-    status: "active",
-  },
-  {
-    name: "Karin Keller-Sutter",
-    Role: "Federal Councillor",
-    departement: "Female",
-    status: "active",
-  },
-];
-
-const TableChart = () => (
+const TableChart = ({ mainCharacters }) => (
   <Card className="bg-[#32363E] ring-transparent text-white">
-    <Title>Characters</Title>
+    <Title>Main Characters</Title>
     <Table className="mt-5">
       <TableHead>
         <TableRow className="uppercase">
@@ -78,31 +31,45 @@ const TableChart = () => (
         </TableRow>
       </TableHead>
 
-
       <TableBody>
-        {data.map((item) => (
-          <TableRow key={item.name} className="">
-            <TableCell>
-              <Flex className="justify-start items-center">
+        {mainCharacters !== "undefined" &&
+          mainCharacters.map((character) => (
+            <TableRow key={character.id} className="">
+              <TableCell>
+                <Flex className="justify-start items-center">
                   <Image
-                    className="rounded-full mr-3"
-                    src="https://rickandmortyapi.com/api/character/avatar/4.jpeg"
+                    className="rounded-full mr-3 hover:scale-105"
+                    src={character.image}
                     alt="img"
-                    width={20}
-                    height={20}
+                    width={30}
+                    height={30}
                   />
-                <Text>{item.name}</Text>
-              </Flex>
-            </TableCell>
-            <TableCell>
-              <Text>{item.Role}</Text>
-            </TableCell>
-            <TableCell>
-            <Badge color="stone">{item.departement}</Badge>
-            </TableCell>
-            <TableCell></TableCell>
-          </TableRow>
-        ))}
+                  <Text className="hover:text-slate-300">{character.name}</Text>
+                </Flex>
+              </TableCell>
+              <TableCell>
+                <Text className="hover:text-slate-300">
+                  {character.origin.name}
+                </Text>
+              </TableCell>
+              <TableCell>
+                {character.gender === "Male" ? (
+                  <Badge className="bg-cyan-500" color="white">
+                    {character.gender}
+                  </Badge>
+                ) : character.gender === "Female" ? (
+                  <Badge className="bg-red-500" color="white">
+                    {character.gender}
+                  </Badge>
+                ) : (
+                  <Badge className="bg-amber-500" color="white">
+                    {character.gender}
+                  </Badge>
+                )}
+              </TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+          ))}
       </TableBody>
     </Table>
   </Card>

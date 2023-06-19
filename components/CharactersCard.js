@@ -1,7 +1,7 @@
 import { Card, Subtitle, Metric, Flex, Title } from "@tremor/react";
 import { HiUsers } from "react-icons/hi2";
 
-const CharactersCard = ({mainCharacters}) => {
+const CharactersCard = ({characters}) => {
   return (
     <Card className="h-full">
       <Flex className="items-center pb-4">
@@ -10,7 +10,7 @@ const CharactersCard = ({mainCharacters}) => {
         <HiUsers className="text-white"/>
         </Flex>
       </Flex>
-      <Metric className="pb-2">{mainCharacters !== undefined ? mainCharacters.info.count : 0}</Metric>
+      <Metric className="pb-2">{characters !== undefined ? characters.info.count : 0}</Metric>
       <Subtitle className="text-[#e6e5e8]">TOT</Subtitle>
     </Card>
   );

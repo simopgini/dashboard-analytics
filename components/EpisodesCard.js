@@ -3,7 +3,7 @@ import { Card, Subtitle, Metric, Flex, Icon, Title, ProgressBar } from "@tremor/
 import { HiBookOpen } from "react-icons/hi2";
 const EpisodesCard = ({episodes}) => {
   return (
-    <Card>
+    <Card className="h-full">
       <Flex className="items-center pb-4">
         <Title className="text-white">Episodes</Title>
         <Flex className="bg-cyan-500 shadow-md w-10 h-10 rounded-full justify-center">
@@ -12,7 +12,6 @@ const EpisodesCard = ({episodes}) => {
       </Flex>
       <Metric className="pb-2">{episodes !== undefined ? episodes.info.count : 0}</Metric>
       <ProgressBar value={80} color="amber" className="mt-3" />
-      <Subtitle className="text-[#e6e5e8]">TOT</Subtitle>
     </Card>
   );
 };

@@ -15,7 +15,5 @@ export default function App({ Component, pageProps }) {
         <Component className={`${poppins.className} bg-[#20232a] h-full w-full`} {...pageProps} />
       </div>
     </>
-    //  <Component {...pageProps} />
-
   );
 }

@@ -1,21 +1,26 @@
 import { Card, Title, DonutChart, Legend } from "@tremor/react";
+// import { HiUsers } from "react-icons/hi2";
 
 const characters = [
   {
     gender: "Male",
-    number: 9800,
+    number: 450,
   },
   {
     gender: "Female",
-    number: 4567,
+    number: 300,
   },
   {
     gender: "Unknown",
-    number: 3908,
+    number: 76,
   },
 ];
 
 const valueFormatter = (number) => `${number.toString()}`;
+// const valueFormatter = () => {
+//   return <HiUsers className="text-white"/>
+// }
+
 
 const GenderChart = () => (
   <Card className="text-white h-full">
@@ -30,6 +35,7 @@ const GenderChart = () => (
       data={characters}
       category="number"
       index="gender"
+      showAnimation="true"
       valueFormatter={valueFormatter}
       colors={["cyan", "rose", "amber"]}
     />

@@ -37,18 +37,51 @@ const chartdata = [
   },
 ];
 
+
+
+// const LocationChart = ({ locationResidents }) => {
+
+//   const dataFormatter = (locationResidents) => {
+//     return `${locationResidents.residents.length}`;
+//   };
+//   return (
+//     <Card className=" text-white">
+//       <Title className="text-white">Location Overview</Title>
+//       {locationResidents !== "undefined" &&
+//         locationResidents.map((resident) => (
+//           <BarChart
+//             key={resident.id}
+//             className="mt-6"
+//             data={locationResidents}
+//             index={resident.name}
+//             categories={resident.residents}
+//             colors={["cyan"]}
+//             valueFormatter={dataFormatter}
+//             yAxisWidth={48}
+//           />
+//         ))}
+//     </Card>
+//   );
+// };
+
 const dataFormatter = (number) => {
-  return Intl.NumberFormat("us").format(number).toString();
+  return `${number.toString()}`;
 };
 
-const LocationChart = () => {
+
+
+const LocationChart = ({locationResidents}) => {
+  
+  const location = (locationResidents) => {
+    return `${locationResidents.name}`;
+  };
   return (
     <Card className=" text-white">
       <Title className="text-white">Location Overview</Title>
       <BarChart
         className="mt-6"
         data={chartdata}
-        index="name"
+        index={"name"}
         categories={["Residents"]}
         colors={["cyan"]}
         valueFormatter={dataFormatter}
