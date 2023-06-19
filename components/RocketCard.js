@@ -14,20 +14,20 @@ const RocketCard = () => {
           Have a look at the stats by clicking the dashboard button in the menu.
         </div>
       </div>
-      <Image
-        className="absolute bottom-0 right-0 w-40 lg:w-40 2xl:w-52"
-        src="/rocket.webp"
-        alt="rocket"
-        width={150}
-        height={50}
-        priority={true}
-      />
+      {/* <div className="h-20 overflow-hidden bg-"> */}
+        <Image
+          className="absolute -bottom-4 -right-6 w-40 lg:w-40 2xl:w-40"
+          src="/rocket.webp"
+          alt="rocket"
+          width={150}
+          height={50}
+          priority={true}
+        />
+        {/* <div class="bg-transparent z-10 ">dfg</div>
+        <div class="absolute -z-10 bg-[#ff5d8f] w-48 h-64">as</div>
+      </div> */}
     </Card>
   );
 };
 
 export default RocketCard;
-
-{
-  /* w-40 lg:w-52 2xl:w-64 */
-}

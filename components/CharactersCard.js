@@ -11,10 +11,8 @@ const CharactersCard = ({characters}) => {
         </Flex>
       </Flex>
       <Metric className="pb-2">{characters !== undefined ? characters.info.count : 0}</Metric>
-      <Subtitle className="text-[#e6e5e8]">TOT</Subtitle>
     </Card>
   );
 };
 
 export default CharactersCard;
-// className="rounded-xl bg-[#32363E] text-white ring-transparent"

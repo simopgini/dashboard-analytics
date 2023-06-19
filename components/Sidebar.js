@@ -61,16 +61,6 @@ function Sidebar() {
       >
         {showMenu ? <RiCloseFill /> : <RiMore2Fill />}
       </button>
-
-      {/* <button
-        onClick={(e) => {
-          e.preventDefault();
-          return setShowMenu(!showMenu);
-        }}
-        className="bg-cyan-500 md:hidden fixed right-4 bottom-4 text-2xl bg-primary-900 p-2.5 rounded-full text-white z-50"
-      >
-        {showMenu ? <RiCloseFill /> : <RiMore2Fill />}
-      </button> */}
     </>
   );
 }

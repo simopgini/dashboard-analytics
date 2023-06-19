@@ -1,47 +1,52 @@
 import { Card, Title, DonutChart, Legend } from "@tremor/react";
-// import { HiUsers } from "react-icons/hi2";
 
-const characters = [
-  {
-    gender: "Male",
-    number: 450,
-  },
-  {
-    gender: "Female",
-    number: 300,
-  },
-  {
-    gender: "Unknown",
-    number: 76,
-  },
-];
+const dataFormatter = (input) => {
+  let countMales = 0;
+  let countFemales = 0;
+  let countUnknow = 0;
 
-const valueFormatter = (number) => `${number.toString()}`;
-// const valueFormatter = () => {
-//   return <HiUsers className="text-white"/>
-// }
+  input.forEach((element) => {
+    if (element.gender === "Male") {
+      countMales += 1;
+    } else if (element.gender === "Female") {
+      countFemales += 1;
+    } else if (element.gender === "unknown") {
+      countUnknow += 1;
+    }
+  });
 
+  return [
+    {
+      gender: "Male",
+      number: countMales,
+    },
+    {
+      gender: "Female",
+      number: countFemales,
+    },
+    {
+      gender: "unknown",
+      number: countUnknow,
+    },
+  ];
+};
 
-const GenderChart = () => (
+const GenderChart = ({ genderChart }) => (
   <Card className="text-white h-full">
     <Title>Gender</Title>
-      <Legend
-        className="mt-3"
-        categories={["Male", "Female", "Unknown"]}
-        colors={["cyan", "red", "amber"]}
-      />
+    <Legend
+      className="mt-3"
+      categories={["Male", "Female", "unknown"]}
+      colors={["cyan", "red", "amber"]}
+    />
     <DonutChart
       className="mt-6"
-      data={characters}
+      data={dataFormatter(genderChart)}
       category="number"
       index="gender"
-      showAnimation="true"
-      valueFormatter={valueFormatter}
       colors={["cyan", "rose", "amber"]}
     />
   </Card>
 );
 
 export default GenderChart;
-
-{/* <Card className="bg-[#32363E] ring-transparent text-white h-full"> */}
