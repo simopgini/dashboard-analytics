@@ -87,7 +87,7 @@ const Dashboard = () => {
   ) {
     return (
       <div className="h-screen text-white text-lg pl-6 pt-6">
-        <p className="pr-4">Loading...</p>
+        <p className="pr-4 pb-4">Loading...</p>
         <div className="spinner"></div>
       </div>
     );
@@ -102,8 +102,7 @@ const Dashboard = () => {
 
   return (
     <div className="p-4 bg-[#20232a] w-full">
-      <div className="cards-container"></div>
-      <div className="mb-4 grid md:grid-rows-1 grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
+      <div className="mb-4 grid md:grid-rows-1 grid-cols-1 md:grid-cols-12 lg:grid-cols-6 gap-4">
         <div className="col-span-12 md:col-span-6 lg:col-span-3 row-span-2">
           <CharactersCard characters={characters} />
         </div>

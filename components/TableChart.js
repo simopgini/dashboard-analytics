@@ -14,27 +14,21 @@ import {
 import Image from "next/image";
 
 const TableChart = ({ mainCharacters }) => (
-  <Card className="bg-[#32363E] ring-transparent text-white">
+  <Card className="ring-transparent">
     <Title>Main Characters</Title>
     <Table className="mt-5">
       <TableHead>
         <TableRow className="uppercase">
-          <TableHeaderCell className="uppercase text-[#e6e5e8]">
-            Name
-          </TableHeaderCell>
-          <TableHeaderCell className="uppercase text-[#e6e5e8]">
-            Origin
-          </TableHeaderCell>
-          <TableHeaderCell className="uppercase text-[#e6e5e8]">
-            Gender
-          </TableHeaderCell>
+          <TableHeaderCell>Name</TableHeaderCell>
+          <TableHeaderCell>Origin</TableHeaderCell>
+          <TableHeaderCell>Gender</TableHeaderCell>
         </TableRow>
       </TableHead>
 
       <TableBody>
-        {mainCharacters !== "undefined" &&
+        {mainCharacters !== undefined &&
           mainCharacters.map((character) => (
-            <TableRow key={character.id} className="">
+            <TableRow key={character.id}>
               <TableCell>
                 <Flex className="justify-start items-center">
                   <Image
