@@ -32,18 +32,18 @@ const dataFormatter = (input) => {
 };
 
 const GenderChart = ({ genderChart }) => (
-  <Card className="text-white h-full">
+  <Card className='text-white h-full'>
     <Title>Gender</Title>
     <Legend
-      className="mt-3"
+      className='mt-3'
       categories={["Male", "Female", "unknown"]}
       colors={["cyan", "red", "amber"]}
     />
     <DonutChart
-      className="mt-6"
+      className='mt-6'
       data={dataFormatter(genderChart)}
-      category="number"
-      index="gender"
+      category='number'
+      index='gender'
       colors={["cyan", "rose", "amber"]}
     />
   </Card>

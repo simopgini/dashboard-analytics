@@ -10,15 +10,15 @@ const Home = () => {
   <Head>
     <title>Dashboard analytics</title>
     <meta
-      name="description"
-      content="Use this dashboard and increase your sales"
+      name='description'
+      content='Use this dashboard and increase your sales'
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/favicon.ico" />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <link rel='icon' href='/favicon.ico' />
   </Head>;
 
   return (
-    <div className="p-4 bg-gray-dark h-screen text-white">
+    <div className='p-4 bg-gray-dark h-screen text-white'>
       <RocketCard />
     </div>
   );

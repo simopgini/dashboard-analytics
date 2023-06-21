@@ -16,11 +16,11 @@ import Image from "next/image";
 const TableChart = ({ mainCharacters }) => (
   <>
     {mainCharacters.length > 0 ? (
-      <Card className="ring-transparent">
+      <Card className='ring-transparent'>
         <Title>Main Characters</Title>
-        <Table className="mt-5">
+        <Table className='mt-5'>
           <TableHead>
-            <TableRow className="uppercase">
+            <TableRow className='uppercase'>
               <TableHeaderCell>Name</TableHeaderCell>
               <TableHeaderCell>Origin</TableHeaderCell>
               <TableHeaderCell>Gender</TableHeaderCell>
@@ -32,35 +32,35 @@ const TableChart = ({ mainCharacters }) => (
               mainCharacters.map((character) => (
                 <TableRow key={character.id}>
                   <TableCell>
-                    <Flex className="justify-start items-center">
+                    <Flex className='justify-start items-center'>
                       <Image
-                        className="rounded-full mr-3 hover:scale-105"
+                        className='rounded-full mr-3 hover:scale-105'
                         src={character.image}
-                        alt="img"
+                        alt='img'
                         width={30}
                         height={30}
                       />
-                      <Text className="hover:text-slate-300">
+                      <Text className='hover:text-slate-300'>
                         {character.name}
                       </Text>
                     </Flex>
                   </TableCell>
                   <TableCell>
-                    <Text className="hover:text-slate-300">
+                    <Text className='hover:text-slate-300'>
                       {character.origin.name}
                     </Text>
                   </TableCell>
                   <TableCell>
                     {character.gender === "Male" ? (
-                      <Badge className="bg-cyan-500" color="white">
+                      <Badge className='bg-cyan-500' color='white'>
                         {character.gender}
                       </Badge>
                     ) : character.gender === "Female" ? (
-                      <Badge className="bg-red-500" color="white">
+                      <Badge className='bg-red-500' color='white'>
                         {character.gender}
                       </Badge>
                     ) : (
-                      <Badge className="bg-amber-500" color="white">
+                      <Badge className='bg-amber-500' color='white'>
                         {character.gender}
                       </Badge>
                     )}
@@ -72,7 +72,7 @@ const TableChart = ({ mainCharacters }) => (
         </Table>
       </Card>
     ) : (
-      <div className="text-white h-screen">
+      <div className='text-white h-screen'>
         No characters found!Try to refresh the page
       </div>
     )}
