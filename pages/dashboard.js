@@ -10,73 +10,77 @@ import {
   MAIN_CHARACTERS_URL,
 } from "@component/components/constants/Constants";
 import { useEffect, useState } from "react";
+import Error from "next/error";
 
 const Dashboard = () => {
   const [characters, setCharacters] = useState(undefined);
   const [episodes, setEpisodes] = useState(undefined);
-  const [isLoading, setLoading] = useState(false);
-
+  
   async function fetchCharacters() {
-    const response = await fetch(CHARACTERS_URL);
-    const data = await response.json();
+    const res = await fetch(CHARACTERS_URL);
+    if (!res.ok) throw new Error("Something went wrong: could not retrieve the characters...please refresh the page")
+    const data = await res.json();
     setCharacters(data);
-    setLoading(false);
   }
 
   useEffect(() => {
-    setLoading(true);
     fetchCharacters();
   }, []);
 
   async function fetchEpisodes() {
-    const response = await fetch(EPISODES_URL);
-    const data = await response.json();
+    const res = await fetch(EPISODES_URL);
+
+    if (!res.ok) throw new Error("Something went wrong: could not retrieve the episodes...please refresh the page")
+    const data = await res.json();
     setEpisodes(data);
-    setLoading(false);
   }
 
   useEffect(() => {
-    setLoading(true);
     fetchEpisodes();
   }, []);
 
   const [mainCharacters, setMainCharacters] = useState([]);
 
   async function fetchMainCharactersTable() {
-    const response = await fetch(MAIN_CHARACTERS_URL);
-    const data = await response.json();
+    const res = await fetch(MAIN_CHARACTERS_URL);
+    if (!res.ok) throw new Error("Something went wrong: could not retrieve the characters...please refresh the page")
+    const data = await res.json();
     setMainCharacters(data);
-    setLoading(false);
   }
   useEffect(() => {
-    setLoading(true);
     fetchMainCharactersTable();
   }, []);
 
   const [locationResidents, setLocationResidents] = useState([]);
   async function fetchLocationResidents() {
-    const response = await fetch(LOCATION_URL);
-    const data = await response.json();
+    const res = await fetch(LOCATION_URL);
+    if (!res.ok) throw new Error("Something went wrong: could not retrieve the info...please refresh the page")
+    const data = await res.json();
     setLocationResidents(data);
-    setLoading(false);
   }
   useEffect(() => {
-    setLoading(true);
     fetchLocationResidents();
   }, []);
 
   const [genderChart, setGenderChart] = useState(undefined);
   async function fetchGenderChart() {
-    const response = await fetch(CHARACTERS_URL);
-    const data = await response.json();
+    const res = await fetch(CHARACTERS_URL);
+    if (!res.ok) throw new Error("Something went wrong: could not retrieve the info...please refresh the page")
+    const data = await res.json();
     setGenderChart(data);
-    setLoading(false);
   }
 
   useEffect(() => {
-    setLoading(true);
     fetchGenderChart();
   }, []);
+
+
+  if (!characters ||!episodes || !genderChart || !locationResidents || !mainCharacters )
+  return (
+    <div className="h-screen text-white text-lg pl-6 pt-6">
+      <p>Oops! Something went wrong: no data retrieved, try to refresh the page</p>
+    </div>
+  );
 
   if (
     characters === undefined ||
@@ -93,15 +97,8 @@ const Dashboard = () => {
     );
   }
 
-  // if (!mainCharacters)
-  //   return (
-  //     <div className="">
-  //       <p>No profile data, try to refresh the page</p>
-  //     </div>
-  //   );
-
   return (
-    <div className="p-4 bg-[#20232a] w-full">
+    <div className="p-4 bg-gray-dark w-full">
       <div className="mb-4 grid md:grid-rows-1 grid-cols-1 md:grid-cols-12 lg:grid-cols-6 gap-4">
         <div className="col-span-12 md:col-span-6 lg:col-span-3 row-span-2">
           <CharactersCard characters={characters} />
@@ -113,10 +110,7 @@ const Dashboard = () => {
           <GenderChart genderChart={genderChart.results} />
         </div>
         <div className="col-span-12 md:col-span-6 lg:col-span-3 row-span-2">
-          <LocationChart
-            locationResidents={locationResidents}
-            className="bg-orange-400"
-          />
+          <LocationChart locationResidents={locationResidents} />
         </div>
         <div className="col-span-12 lg:col-span-6 row-span-4 gap-4">
           <TableChart mainCharacters={mainCharacters} />

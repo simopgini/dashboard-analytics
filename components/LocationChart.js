@@ -17,7 +17,6 @@ const LocationChart = ({ locationResidents }) => {
   return (
     <Card className=" text-white">
       <Title className="text-white">Location Overview</Title>
-      {locationResidents && locationResidents !== undefined && (
         <BarChart
           className="mt-6"
           data={dataMapper(locationResidents)}
@@ -26,7 +25,6 @@ const LocationChart = ({ locationResidents }) => {
           colors={["cyan"]}
           yAxisWidth={48}
         />
-      )}
     </Card>
   );
 };

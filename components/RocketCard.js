@@ -7,9 +7,9 @@ const RocketCard = () => {
       <div className="flex-none md:flex items-center pb-4">
         <div className="lg:text-lg mb-10 h-64 md:h-44">
           <p className="pb-1">
-            👋🏻 Hey Simona, <br></br>
+            👋🏻 Hey Josè, <br></br>
           </p>
-          we promise, your sales are soaring faster than a rocket!
+          your sales are soaring faster than a rocket, we promise!
           <br></br>
           Have a look at the stats by clicking the dashboard button in the menu.
         </div>

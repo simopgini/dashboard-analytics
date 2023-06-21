@@ -10,8 +10,8 @@ function Sidebar() {
   return (
     <>
       <div
-        className={`bg-[#282c34] fixed md:static w-36 md:w-[16%] xl:w-[16%] 2xl:w-[10%] transition-all z-50 duration-300 ${
-          showMenu ? "left-0 h-full" : "-left-full"
+        className={`bg-gray-sidebar fixed md:static w-36 md:w-[16%] xl:w-[16%] 2xl:w-[10%] transition-all z-50 duration-300 ${
+          showMenu ? "left-0 h-full md:h-screen" : "-left-full"
         }`}>
         <div className="">
           <Link href="/">

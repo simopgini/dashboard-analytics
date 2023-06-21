@@ -11,6 +11,8 @@ module.exports = {
     current: "currentColor",
     extend: {
       colors: {
+        "gray-dark": "#20232a",
+        "gray-sidebar": "#282c34",
         "dark-tremor": {
           brand: {
             faint: "#0B1229", // custom
@@ -42,8 +44,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
-        serif: ['ui-serif', 'serif'],
+        sans: ["Poppins", "sans-serif", "-apple-system", "BlinkMacSystemFont"],
+        serif: ["ui-serif", "serif"],
       },
       boxShadow: {
         // light

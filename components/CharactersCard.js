@@ -10,7 +10,7 @@ const CharactersCard = ({characters}) => {
         <Icon size="md" icon={HiUsers} />
         </Flex>
       </Flex>
-      <Metric className="pb-2">{characters !== undefined ? characters.info.count : 0}</Metric>
+      <Metric className="pb-2">{characters.info.count}</Metric>
     </Card>
   );
 };

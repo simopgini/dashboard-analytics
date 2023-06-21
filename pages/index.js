@@ -1,14 +1,11 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import RocketCard from "@component/components/RocketCard";
-import { Card, Flex, Metric, Title } from "@tremor/react";
-import { HiUser } from "react-icons/hi2";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+const Home = () => {
   const router = useRouter();
   <Head>
     <title>Dashboard analytics</title>
@@ -18,8 +15,10 @@ export default function Home() {
   </Head>;
 
   return (
-      <div className="p-4 bg-[#20232a] h-screen text-white">
+      <div className="p-4 bg-gray-dark h-screen text-white">
         <RocketCard />
       </div>
   );
 }
+
+export default Home

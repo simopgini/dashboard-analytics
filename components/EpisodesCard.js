@@ -11,7 +11,7 @@ const EpisodesCard = ({ episodes }) => {
         </Flex>
       </Flex>
       <Metric className="pb-2">
-        {episodes !== undefined ? episodes.info.count : 0}
+        {episodes !== undefined && episodes.info.count}
       </Metric>
       <ProgressBar value={80} color="amber" className="mt-3" />
     </Card>

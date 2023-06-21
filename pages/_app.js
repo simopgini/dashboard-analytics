@@ -5,8 +5,8 @@ import "@component/styles/globals.css";
   
   return (
     <>
-      <div className="md:flex bg-[#20232a]">
-        <Sidebar className={`bg-[#282c34] h-full`} {...pageProps} />
+      <div className="md:flex bg-gray-dark">
+        <Sidebar className={`bg-gray-sidebar h-full`} {...pageProps} />
         <Component className={`h-full w-full`} {...pageProps} />
       </div>
     </>
