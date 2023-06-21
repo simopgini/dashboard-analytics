@@ -12,7 +12,8 @@ function Sidebar() {
       <div
         className={`bg-gray-sidebar fixed md:static w-36 md:w-[16%] xl:w-[16%] 2xl:w-[10%] transition-all z-50 duration-300 ${
           showMenu ? "left-0 h-full md:h-screen" : "-left-full"
-        }`}>
+        }`}
+      >
         <div className="">
           <Link href="/">
             <div className="flex items-center justify-center md:px-4 py-3 mb-8 md:mb-6">
@@ -57,7 +58,8 @@ function Sidebar() {
       {/* Button mobile - actions the lateral sidebar slide */}
       <button
         onClick={() => setShowMenu(!showMenu)}
-        className="btn-primary md:hidden fixed right-4 bottom-4 text-2xl p-2.5 rounded-full z-50">
+        className="btn-primary md:hidden fixed right-4 bottom-4 text-2xl p-2.5 rounded-full z-50"
+      >
         {showMenu ? <RiCloseFill /> : <RiMore2Fill />}
       </button>
     </>

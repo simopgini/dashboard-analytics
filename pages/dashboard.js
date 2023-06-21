@@ -15,10 +15,13 @@ import Error from "next/error";
 const Dashboard = () => {
   const [characters, setCharacters] = useState(undefined);
   const [episodes, setEpisodes] = useState(undefined);
-  
+
   async function fetchCharacters() {
     const res = await fetch(CHARACTERS_URL);
-    if (!res.ok) throw new Error("Something went wrong: could not retrieve the characters...please refresh the page")
+    if (!res.ok)
+      throw new Error(
+        "Something went wrong: could not retrieve the characters...please refresh the page"
+      );
     const data = await res.json();
     setCharacters(data);
   }
@@ -30,7 +33,10 @@ const Dashboard = () => {
   async function fetchEpisodes() {
     const res = await fetch(EPISODES_URL);
 
-    if (!res.ok) throw new Error("Something went wrong: could not retrieve the episodes...please refresh the page")
+    if (!res.ok)
+      throw new Error(
+        "Something went wrong: could not retrieve the episodes...please refresh the page"
+      );
     const data = await res.json();
     setEpisodes(data);
   }
@@ -43,7 +49,10 @@ const Dashboard = () => {
 
   async function fetchMainCharactersTable() {
     const res = await fetch(MAIN_CHARACTERS_URL);
-    if (!res.ok) throw new Error("Something went wrong: could not retrieve the characters...please refresh the page")
+    if (!res.ok)
+      throw new Error(
+        "Something went wrong: could not retrieve the characters...please refresh the page"
+      );
     const data = await res.json();
     setMainCharacters(data);
   }
@@ -54,7 +63,10 @@ const Dashboard = () => {
   const [locationResidents, setLocationResidents] = useState([]);
   async function fetchLocationResidents() {
     const res = await fetch(LOCATION_URL);
-    if (!res.ok) throw new Error("Something went wrong: could not retrieve the info...please refresh the page")
+    if (!res.ok)
+      throw new Error(
+        "Something went wrong: could not retrieve the info...please refresh the page"
+      );
     const data = await res.json();
     setLocationResidents(data);
   }
@@ -65,7 +77,10 @@ const Dashboard = () => {
   const [genderChart, setGenderChart] = useState(undefined);
   async function fetchGenderChart() {
     const res = await fetch(CHARACTERS_URL);
-    if (!res.ok) throw new Error("Something went wrong: could not retrieve the info...please refresh the page")
+    if (!res.ok)
+      throw new Error(
+        "Something went wrong: could not retrieve the info...please refresh the page"
+      );
     const data = await res.json();
     setGenderChart(data);
   }
@@ -74,13 +89,20 @@ const Dashboard = () => {
     fetchGenderChart();
   }, []);
 
-
-  if (!characters ||!episodes || !genderChart || !locationResidents || !mainCharacters )
-  return (
-    <div className="h-screen text-white text-lg pl-6 pt-6">
-      <p>Oops! Something went wrong: no data retrieved, try to refresh the page</p>
-    </div>
-  );
+  if (
+    !characters ||
+    !episodes ||
+    !genderChart ||
+    !locationResidents ||
+    !mainCharacters
+  )
+    return (
+      <div className="h-screen text-white text-lg pl-6 pt-6">
+        <p>
+          Oops! Something went wrong: no data retrieved, try to refresh the page
+        </p>
+      </div>
+    );
 
   if (
     characters === undefined ||

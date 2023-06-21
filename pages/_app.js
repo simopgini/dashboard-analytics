@@ -1,8 +1,7 @@
 import Sidebar from "@component/components/Sidebar";
 import "@component/styles/globals.css";
 
- const App = ({ Component, pageProps }) => {
-  
+const App = ({ Component, pageProps }) => {
   return (
     <>
       <div className="md:flex bg-gray-dark">
@@ -11,5 +10,5 @@ import "@component/styles/globals.css";
       </div>
     </>
   );
-}
-export default App
+};
+export default App;

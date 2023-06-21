@@ -17,14 +17,14 @@ const LocationChart = ({ locationResidents }) => {
   return (
     <Card className=" text-white">
       <Title className="text-white">Location Overview</Title>
-        <BarChart
-          className="mt-6"
-          data={dataMapper(locationResidents)}
-          index={"name"}
-          categories={["residents"]}
-          colors={["cyan"]}
-          yAxisWidth={48}
-        />
+      <BarChart
+        className="mt-6"
+        data={dataMapper(locationResidents)}
+        index={"name"}
+        categories={["residents"]}
+        colors={["cyan"]}
+        yAxisWidth={48}
+      />
     </Card>
   );
 };
